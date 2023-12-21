@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8" />
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet" />
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Traditional Day Celebration</title>
+ <style>
+ footer {
+      color: white;
+      background-color: #0000;
+      padding: 20px;
+      font-weight: 900;
+      font-family: "Montserrat", sans-serif !important;
+      text-align: center;
+      display: grid;
+      place-content: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      li {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  body {
+   margin: 0;
+   padding: 0;
+   background-color: #000 !important;
+  }
+
+  header {
+   background-color: #333;
+   color: white;
+   padding: 1em;
+   text-align: center;
+  }
+
+  .hero {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 80vh;
+   color: #fff !important;
+   padding: 2em;
+   gap: 10px;
+   display: grid;
+   place-content: center;
+   background: linear-gradient(rgba(51, 51, 51, 0.8),
+     rgba(51, 51, 51, 0.8)),
+    url("https://i.ytimg.com/vi/fh-8RM0kWN4/maxresdefault.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+  }
+
+  .hero h2 {
+   font-size: 5em;
+   font-weight: bold;
+   font-family: "Rubik Scribble", sans-serif;
+   margin: 0;
+   text-transform: uppercase;
+   color: #fff !important;
+  }
+
+  @media screen and (max-width: 750px) {
+   .hero {
+    gap: 25px;
+   }
+
+   .hero h2 {
+    font-size: 3rem;
+   }
+  }
+
+  .hero p {
+   font-size: 1.5em;
+   font-weight: bold;
+   margin: 0;
+   font-family: "Montserrat", sans-serif;
+  }
+
+  .hero p {
+   font-size: 2.5rem;
+   font-weight: 500;
+  }
+
+  section {
+   max-width: 800px;
+   margin: 0 auto 2em;
+   padding: 1em;
+   font-family: "Montserrat", sans-serif !important;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   border-radius: 0.5em;
+  }
+
+  section h2 {
+   background-color: #fff;
+   padding: 0.25rem 2rem;
+   color: #000 !important;
+  }
+
+  h2 {
+   color: #333;
+   font-weight: 600;
+   text-align: center;
+  }
+
+  .event {
+   border-bottom: 1px solid #ccc;
+   padding-bottom: 1em;
+   color: #fff !important;
+  }
+
+  .event div {
+   padding-left: 2rem;
+  }
+
+  .event h3 {
+   margin-bottom: 0.5em;
+  }
+
+  .event p {
+   margin: 0.5em 0;
+  }
+ </style>
+</head>
+
+<body>
+ <div class="hero">
+  <h2>Join Us for Traditional Day</h2>
+  <p>
+    <span style="background-color: #000; color: white; padding: 0 2rem;"><b>
+        MANTHAN
+      </b></span>
+  <p style="font-size: 2rem;">Evolve. Entertain. Enjoy.</p>
+  </p>
+ </div>
+ <section id="eventSchedule">
+  <h2>Event Schedule</h2>
+ </section>
+
+ <script>
+  // Your event data organized in an array
+  const eventData = [
+   { name: "Sketch", time: "8:00 AM - 9:30 AM", venue: "Class Room No 5", contacts: ["Sanket - 9503089551", "Sharvari - 7517559410", "Mallika Arjun - 9880286822"] },
+   { name: "Twist A Table", time: "10:00 AM - 11:00 AM", venue: "Auditotium", contacts: ["Namrate - 7822078772", "Pratiksha - 9359967550", "Sachin - 8600820993"] },
+   { name: "What's Your POV", time: "11:00 AM - 12:00 PM", venue: "Male Ward", contacts: ["Vaishnavi Vatharkar - 7972451331", "Nisha - 9353954887"] },
+   { name: "Solo Singing", time: "11:00 AM - 1:00 PM", venue: "Auditorium", contacts: ["Shruti - 9373711775", "Madhushree - 7349422240"] },
+   { name: "Folk Dance", time: "2:00 PM - 5:00 PM", venue: "Auditorium", contacts: ["Pratiksha - 9359967550", "Purva - 9001790808"] },
+   { name: "What's Your POV (Reading)", time: "2:00 PM - 5:00 PM", venue: "Auditorium", contacts: ["Vaishnaviv - 7972451331", "Nisha - 9353954887"] },
+   { name: "Painting", time: "6:00 PM - 7:30 PM", venue: "Male Ward", contacts: ["Shruti - 9373711775", "Shyam - 8830724991", "Kartik - 7887442098"] },
+   
+  ];
+
+  function createEventHTML(event) {
+   return `
+        <div class="event">
+          <h3>${event.name}</h3>
+          <div>
+            <p>Time: ${event.time}</p>
+            <p>Venue: ${event.venue}</p>
+            <h4>Contact Our Team</h4>
+            <div>
+              ${event.contacts.map(contact => `<p>- ${contact}</p>`).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+  }
+
+  const eventSection = document.getElementById('eventSchedule');
+  eventSection.innerHTML += eventData.map(createEventHTML).join('');
+ </script>
+  <footer style="border-top: 2px solid #ccc;">
+    <ul>
+      <img
+        src="https://lh3.googleusercontent.com/fife/AGXqzDn6nUx3jMiCOE8vVEVWf2P3T_VUmjfkdhUhPk87Lsc1QABReXePKQiua96VOmJqLRZfrvD9qsuHOs3Efu_bauZ8pUkFtG9ydWjUQPDmC7K-AhYpLnEJIdCohsZsTfMTxZ4xcaGwfBVj36ERcXwsIoo7OV-DPs680pecOlZ6cWPiG-Ns9frPu776N9OqHK70cOmyyfPq01gl9QlvN9OFY7rp2wM-DzWl6pz3mgy_LAC8kzO0uhyf8LwHov6A5sefu_j6udzeazzOOAo0ZD3726eYIdF9UANDNPJuXNy_yGNS5mY9TCCrO_rxhSDEUzAXIGyS7AJIzFlMu11E3hX7831rBGGcIdkeLRb8eGbbgik4Q07pdAZZbQq4ZkTHJy8P2YKBAZ56EnXnEyVBwm3vQ0LWrgoNxlZklTZYyWNhJsbHpzjWejURkwpVDzbiFG8QqzaSZqmcAzR9cDTsoGdiGMQIafvbJIR4Gd0ln59aSX7hoqdJpQYFK38xuFmuSZMtnBkC09Ukdcl600j-q2wm3MWpbAnTdNjui6E_OTwDgH3WwVcod30MNh-61WVa_gmV8PJgCVUXj6316-5W4U4zXAxJtcuQabJtazTEWtx8F-IRyNS4ym7yTXd8E23rfSKmojGE9kGSXiUIl7DugM8zy5LNzOu3VuPUvzRHBtgp_A_4P96rDCwMUwSTbArD3A1C6pduYRO2BNheP71TEo3CHJNv-rcczfYBJ60Sh-O9V-PTd6bYLmXSjqFtB5cScGdE1tM6kUqacV2cMyKnnzfw52KZEUe-aZ1xxQAHViJuPF9gmuxU8HNlaVKeoHO4ZSVJbZW4o2qUI_ltBZNkCsZCmsIh4_fVrgM3LLx1F_0tcBC8WdivT9PUm3MFrB_0Rye2SJ_N_8SY9lExHRJmZcb5yM6EZVfYcb2wVBnZx1NDsm1x=w3429-h7619"
+        style=" border-radius: 100%; width: 100px; height: 100px; ">
+
+      <li>Krishna Ayurvedic Medical College & Hospital, Sankeshwar
+        Behind Syrine Hospital, Old P B Road, Sankeshwar – 591313
+      </li>
+    </ul>
+    <div style="display: flex; place-content: center; gap: 5px;"><a href="https://www.instagram.com/Pratham.pb/" target="_blank" style="border-left: 2px solid black;"><li>@Pratham.pb</li></a>
+      <a href="https://github.com/maligaurav947?tab=repositories" target="_blank" style="border-left: 2px solid black;"><li>@maligaurav947</li></a></div>
+  </footer>
+</body>
+
+</html>
